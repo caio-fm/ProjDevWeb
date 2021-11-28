@@ -2,6 +2,7 @@
 O projeto é um fórum de mensagens sobre games chamado Game Zone. 
 
 Funcionalidades principais planejadas:
+
 -Cadastrar usuário
 
 -Criar tópicos
