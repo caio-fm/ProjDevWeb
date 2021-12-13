@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Zone</title>
+    <link rel="icon" href="../images/favicon.ico" />
+
+    <style>
+        #navbar {
+            background-color: darkred;
+        }
+        #welcome {
+            float: right;
+        }
+        a:link {
+            color: darkgray;
+        }
+        a:visited {
+            color: lightgray;
+        }
+    </style>
+    <script>
+        var getusers = () => {
+            let result = fetch('/users')
+            result.then(response => response.json()).then(
+                function(data) {
+                    let res = "";
+                    data.forEach(element => {
+                        res += element.id + " / " + element.user + "<br>";
+                });
+                document.getElementById("userlist").innerHTML = res;
+                }
+            )
+        }
+        var createuser = () => {
+            let v = document.getElementById('usuario').value
+            fetch("/users", {
+                headers: new Headers({'content-type':'application/json'}),
+                method:"POST",
+                body: JSON.stringify({"user" : v})
+            });
+        }
+    </script>
+</head>
+
+<body style="background-color: black; color: darkgray;">
+    <div id="navbar">
+        <a href="home.html">Home</a>
+        <div id="welcome">
+            Bem vindo ao Game Zone, "nome do usuário"!
+        </div>
+    </div>
+
+    <div style="text-align:center;">
+        <img src="../images/logo.png" alt="logo" height="170" width="170"><br>
+        <form>
+            <label for="usuario">Usuário:</label><br>
+            <input type="text" id="usuario"><br>
+            <!--<label for="email">Email:</label><br>
+            <input type="text" id="email"><br>
+            <label for="senha">Senha:</label><br>
+            <input type="text" id="senha"><br>
+            <label for="csenha">Confirme a senha:</label><br>
+            <input type="text" id="csenha"><br><br>-->
+            <input type="button" value="POST usuário" onclick="createuser()">
+            <input type="button" value="GET usuários" onclick="getusers()">
+            <div id="userlist">
+
+            </div>
+        </form>
+    </div>
+    
+</body>
+</html>
