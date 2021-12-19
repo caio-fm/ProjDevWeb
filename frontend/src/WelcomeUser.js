@@ -2,7 +2,10 @@ import React, {useState} from 'react';
 
 function WelcomeUser(props) {
     const [loginStatus, setLoginStatus] = useState("Login");
-    const handleClick = () => setLoginStatus("Logado");
+    const handleClick = () => {
+        if (loginStatus === "Login") setLoginStatus("Logado. Clique de novo para logout");
+        else setLoginStatus("Login");
+    }
 
     return (
 
