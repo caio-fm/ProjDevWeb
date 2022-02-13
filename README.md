@@ -1,4 +1,6 @@
 # ProjDevWeb
+Porta default do backend: 3001
+
 O projeto é um fórum de mensagens sobre games chamado Game Zone. 
 
 Funcionalidades principais planejadas:

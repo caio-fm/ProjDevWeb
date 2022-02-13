@@ -1,8 +1,11 @@
-import './App.css';
+import'./App.css';
 import WelcomeUser from './WelcomeUser';
 import Button from './Button';
+import NewestUser from './NewestUser';
 
-function App() {
+import React, {useState, useEffect} from "react";
+
+function App(props) {
 
   const usuario = document.getElementById("usuario");
   return (
@@ -21,6 +24,7 @@ function App() {
           <img src= "logo.png" alt="logo" height="170" width="170"></img>
           <br></br>
           <a href="register.html">Clique aqui para se registrar!</a><hr></hr>
+          <NewestUser></NewestUser>
         </div>
           <div id="sections">
           <a href="section.html">Sony</a><hr></hr>
