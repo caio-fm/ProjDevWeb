@@ -34,7 +34,7 @@ function SignupForm(props) {
 
 
     return (
-        <SignupContext.Provider value= {{setNewestUser, newestUser}}>
+        <SignupContext.Provider value={{setNewestUser, newestUser}}>
           <form>
             <label>Usuário 
             <input onChange={onChangeUsername} type="text"></input>
