@@ -1,13 +1,10 @@
-import'./App.css';
-import WelcomeUser from './WelcomeUser';
-import Button from './Button';
-import NewestUser from './NewestUser';
+import logo from './logo.svg';
+import './App.css';
+import SignupForm from './components/SignupForm.js';
 
-import React, {useState, useEffect} from "react";
 
-function App(props) {
+function App() {
 
-  const usuario = document.getElementById("usuario");
   return (
     <div className="App">
       <head>
@@ -16,26 +13,23 @@ function App(props) {
       </head>
       <div id="main">
         <div id="navbar">
-          <a href="home.html">Home</a>
+          <a href="/">Home</a>
           <div id="welcome">
           </div>
         </div>
         <div id="gzlogo">
           <img src= "logo.png" alt="logo" height="170" width="170"></img>
           <br></br>
-          <a href="register.html">Clique aqui para se registrar!</a><hr></hr>
-          <NewestUser></NewestUser>
         </div>
           <div id="sections">
-          <a href="section.html">Sony</a><hr></hr>
-          <a href="section.html">Nintendo</a><hr></hr>
-          <a href="section.html">Microsoft</a><hr></hr>
-          <a href="section.html">PC</a><hr></hr>
-          <a href="section.html">Off-topic</a><hr></hr>
+          <a href="section">Sony</a><hr></hr>
+          <a href="section">Nintendo</a><hr></hr>
+          <a href="section">Microsoft</a><hr></hr>
+          <a href="section">PC</a><hr></hr>
+          <a href="section">Off-topic</a><hr></hr>
           </div>
       </div>
-      <WelcomeUser id="login" text="Clique no botão abaixo para fazer login!"></WelcomeUser>
-      <Button></Button>
+      <SignupForm></SignupForm>
     </div>
 
 
